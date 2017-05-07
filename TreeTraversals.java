@@ -1,26 +1,29 @@
 package binaryTree;
 
-public class Insertion {
+public class TreeTraversals {
 
 	static Node root;
 
 	public static void main(String[] args) {
-		Insertion tree = new Insertion();
+		TreeTraversals  tree = new TreeTraversals ();
 		tree.insert(4);
 		tree.insert(2);
 		tree.insert(3);
 		tree.insert(8);
 		tree.insert(10);
 		tree.insert(1);
+		tree.insert(100);
+		tree.insert(90);
+		tree.insert(19);
 		tree.display(root);
 
 		// System.out.println("Depth:::" + tree.maxDepth(root));
 
-		// System.out.println("Data Found: " + tree.findData(root, 6));
+		 System.out.println("Data Found: " + tree.findData(root, 100));
 
-		System.out.println("After Deletion:");
-		tree.delete(10);
-		tree.display(root);
+		//System.out.println("After Deletion:");
+		//tree.delete(10);
+		//tree.display(root);
 
 	}
 
@@ -119,14 +122,14 @@ public class Insertion {
 				if (root.data == data) {
 					return true;
 				} else {
-					return false;
+					return findData(root,data);
 				}
 			} else if (data < root.data) {
 				root = root.left;
 				if (root.data == data) {
 					return true;
 				} else {
-					return false;
+					return findData(root,data);
 				}
 
 			} else {
